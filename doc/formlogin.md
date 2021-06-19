@@ -58,7 +58,6 @@ DefaultLoginPageGeneratingFilter 에 해당 내용 설정이 되어있음
     - failureHandler
     
 - authenticationDetailSource : Authentication 객체의 details에 들어갈 정보를 직접 만들어 줌
-
 ```java
     @Override
     public Authentication attemptAuthentication(HttpServletReqeust request, HttpServletResponse response) throws AuthenticationException{
@@ -74,3 +73,18 @@ DefaultLoginPageGeneratingFilter 에 해당 내용 설정이 되어있음
         return this.getAuthenticationManager().authenticate(authRequest);
         }
 ```
+???
+
+##DefaultLogoutPageGeneratingFilter
+- GET / logout 처리
+- POST / logout 요청할 수 있는 URL
+- 로그아웃 처리를 한다
+-> session, SecurityContext, csrf, 쿠키, remember-me 쿠키등을 삭제한다.
+- 기본 페이지로 redirect
+
+LogoutHandler
+- SecurityContextLogoutHandler
+- Cookie
+- CSRFLogout
+- RememberMeService
+- LogoutSuccessEventPublishingLogoutHandler: 로그아웃이 성공하면 이벤트 발생
