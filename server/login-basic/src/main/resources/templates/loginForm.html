@@ -11,7 +11,9 @@
 
 <div class="container center-contents">
     <div class="row">
-        <form class="form-signin" method="post" th:action="@{/loginprocess}">
+        <form class="form-signin" method="post" th:action="@{/login}">
+<!--        <form class="form-signin" method="post" th:action="@{/login}">-->
+<!--            thymleaf가 제공하는 action만 제공해도 scrf토큰에 자동으로 달린다.-->
             <h1 class="h3 mb-3 font-weight-normal"> 로그인 </h1>
             <label for="username" class="sr-only">로그인 아이디</label>
             <input id="username"
