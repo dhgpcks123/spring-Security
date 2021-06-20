@@ -1,0 +1,15 @@
+server:
+  port: 9051
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:

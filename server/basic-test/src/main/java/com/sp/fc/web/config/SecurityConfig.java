@@ -17,22 +17,22 @@ import org.springframework.security.crypto.password.PasswordEncoder;
     그냥 SecurityFilterChain을 하나 더 만들면 된다.
     다만 필터 순서가 중요하기 때문에 @Order순서를 정해줘야한다.
 */
-@EnableWebSecurity(debug = true)
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableWebSecurity(debug = true)
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser(User.builder()
-                        .username("user2")
-                        .password(passwordEncoder().encode("2"))
-                        .roles("USER"))
-                .withUser(User.builder()
-                        .username("user3")
-                        .password(passwordEncoder().encode("3"))
-                        .roles("ADMIN")
-                );
+//        auth.inMemoryAuthentication()
+//                .withUser(User.builder()
+//                        .username("user2")
+//                        .password(passwordEncoder().encode("2"))
+//                        .roles("USER"))
+//                .withUser(User.builder()
+//                        .username("user3")
+//                        .password(passwordEncoder().encode("3"))
+//                        .roles("ADMIN")
+//                );
     }
 
     @Bean
